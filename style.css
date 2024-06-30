@@ -1,0 +1,51 @@
+.bgPrimary{
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+
+.bgSecondary{
+    background: rgb(219,231,255);
+    background: radial-gradient(circle, rgba(219,231,255,1) 0%, rgba(238,244,255,1) 50%, rgba(255,255,255,1) 100%);
+}
+
+.textFont1{
+    font-family: 'Synonym', sans-serif;
+    font-family: 'Chillax', sans-serif;
+}
+.navbarScroll {
+    margin: 2vh;
+    border-radius: 15px;
+    transition: 1s;
+}
+
+.articlePageTitle {
+    font-size: 5vw;
+    margin: 0;
+}
+
+.navbar {
+    transition: 1s;
+}
+
+.title {
+    font-size: 7vh;
+}
+
+.subtitle {
+    font-size: 4vh;
+}
+
+.btnArticoli {
+    width: 30vh;   
+    border: none;
+    border-radius: 15px;
+    padding: 2vh;
+}
+
+
+.articleCard{
+    margin: 3vh;
+    height: 30vh;
+    width: 30vh;
+    border-radius: 10px;
+}
