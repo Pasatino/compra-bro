@@ -5,9 +5,9 @@ let article = document.querySelector("#article")
 window.addEventListener("scroll", () => {
     let scrolled = window.scrollY;
     if (scrolled > 0){
-        navbar.classList.add("navbarScroll")
+        navbar.classList.add("navbar-scroll")
     } else {
-        navbar.classList.remove("navbarScroll")
+        navbar.classList.remove("navbar-scroll")
     }
 });
 
@@ -29,14 +29,14 @@ fetch('./annunci.json')
         }
     function showCards(data){
         data.forEach((articles)=>{
-            let card = document.createElement('div');
+            let card = document.createElement('article');
             card.classList.add('col-3')
             card.innerHTML =`
-            <div class='articleCard bgPrimary flex-column p-3 textFont1'>
+            <article class='flex-column p-3      article-body bg-primary textFont1'>
             <h3 class="articleName">${articles.name}</h3>
             <p class="articleCategory">${articles.category}</p>
-            <p class="articlePrice">${articles.price}</p> </div>`
-            article.appendChild(card);               
+            <p class="articlePrice">${articles.price}</p> </article>`
+            article.appendChild(card); //appendChild ci permette di inserire le card create all'interno del section con id article           
         });
         
     }
