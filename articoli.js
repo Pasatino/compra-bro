@@ -1,6 +1,6 @@
 let navbar = document.querySelector("#navbar")
-let article = document.querySelector("#article")
-let accordionBody = document.querySelector("#acordionBody")
+let myArticle = document.querySelector("#myArticle")
+let categoriesAccordionBody = document.querySelector("#categoriesAccordionBody")
 window.addEventListener("scroll", () => {
     let scrolled = window.scrollY;
     if (scrolled > 0){
@@ -29,6 +29,7 @@ fetch('./annunci.json')
             }
         }
         function showCards(data){
+            myArticle.innerHTML= "";
             data.forEach((articles)=>{
                 let card = document.createElement('article');
                 card.classList.add('col-3')
@@ -37,9 +38,9 @@ fetch('./annunci.json')
                 <h3 class="articleName">${truncateWord(articles.name)}</h3>
                 <p class="articleCategory">${articles.category}</p>
                 <p class="articlePrice">${articles.price} $</p> </article>`
-                article.appendChild(card); //appendChild ci permette di inserire le card create all'interno del section con id article           
+                myArticle.appendChild(card); //appendChild ci permette di inserire le card create all'interno del section con id article           
         });
-
+        }
         function generateRadios() {
             let categories = data.map((annuncio)=> annuncio.category);
             let uniqueCategories = [];
@@ -50,23 +51,47 @@ fetch('./annunci.json')
             });
             console.log(uniqueCategories);
             uniqueCategories.forEach((category)=>{
-                let div = document.createElement('div');
-                div.classList.add('form-check');
+                let div = document.createElement("div");
+                div.classList.add("form-check");
                 div.innerHTML =`
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Default radio
+                    <input 
+                    class="form-check-input" 
+                    type="radio" 
+                    name="flexRadioDefault" 
+                    id="${category}">
+
+                    <label class="form-check-label" for="${category}">
+                        ${category}
                     </label>
                     `;
-                accordionBody.appendChild(div);
-            })
+                    categoriesAccordionBody.appendChild(div);
+            });
         }
-        generateRadios();
         
-    }
+        
+        function filterByCategory(category) {
+            if (category !="All") {
+                let filtered = data.filter((article)=> article.category == category);
+                showCards(filtered);
+            } else {
+                showCards(data);
+            }
+            
+        }
+        
+        showCards(data);
+        generateRadios();
+
+        let radioButtons = document.querySelectorAll(".form-check-input");
+        radioButtons.forEach((button)=>{
+            button.addEventListener('click', ()=>{
+                filterByCategory(button.id);
+            })
+        })
+    
     
     
     console.log(data);
-    showCards(data)
-})
+    
+});
 
