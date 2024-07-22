@@ -1,6 +1,8 @@
-let navbar = document.querySelector("#navbar")
-let myArticle = document.querySelector("#myArticle")
-let categoriesAccordionBody = document.querySelector("#categoriesAccordionBody")
+let navbar = document.querySelector("#navbar");
+let myArticle = document.querySelector("#myArticle");
+let categoriesAccordionBody = document.querySelector("#categoriesAccordionBody");
+let priceInput = document.querySelector("#priceInput");
+let priceInputValue = document.querySelector("#priceInputValue");
 window.addEventListener("scroll", () => {
     let scrolled = window.scrollY;
     if (scrolled > 0){
@@ -78,20 +80,47 @@ fetch('./annunci.json')
             }
             
         }
+
+        function setPriceInput(){
+            let prices = data.map((annuncio) => +annuncio.price);
+            prices.sort((a,b)=> a - b);
+            let maxPrice = Math.ceil(prices.pop());
+            let minPrice = Math.floor(prices.shift());
+            priceInput.max = maxPrice;
+            priceInput.min = minPrice;
+            priceInput.value = maxPrice;
+            priceInputValue.innerHTML = maxPrice;
+
+            /* console.log(maxPrice); */
+            /* console.log(minPrice); */
+        }
+        
+
+        function filterByPrice(){
+            let filtered = data.filter((article) => +article.price <= priceInput.value);
+            
+            showCards(filtered);
+        }
+        
         
         showCards(data);
         generateRadios();
+        setPriceInput();
 
         let radioButtons = document.querySelectorAll(".form-check-input");
         radioButtons.forEach((button)=>{
-            button.addEventListener('click', ()=>{
+            button.addEventListener("click", ()=>{
                 filterByCategory(button.id);
-            })
-        })
+            });
+        });
+        
+        priceInput.addEventListener("input", ()=> {
+            filterByPrice();
+            priceInputValue.innerHTML = priceInput.value;
+          });
     
     
-    
-    console.log(data);
+    /* console.log(data); */
     
 });
 
