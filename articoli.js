@@ -3,6 +3,7 @@ let myArticle = document.querySelector("#myArticle");
 let categoriesAccordionBody = document.querySelector("#categoriesAccordionBody");
 let priceInput = document.querySelector("#priceInput");
 let priceInputValue = document.querySelector("#priceInputValue");
+let searchInput = document.querySelector("#searchInput");
 window.addEventListener("scroll", () => {
     let scrolled = window.scrollY;
     if (scrolled > 0){
@@ -102,11 +103,16 @@ fetch('./annunci.json')
             showCards(filtered);
         }
         
+        function filterByWord(word){
+            let filtered = data.filter((annuncio)=> annuncio.name.toLowerCase().includes(word.toLowerCase()))
+            /* console.log(filtered); */
+            showCards(filtered);
+        }
         
         showCards(data);
         generateRadios();
         setPriceInput();
-
+        
         let radioButtons = document.querySelectorAll(".form-check-input");
         radioButtons.forEach((button)=>{
             button.addEventListener("click", ()=>{
@@ -117,8 +123,11 @@ fetch('./annunci.json')
         priceInput.addEventListener("input", ()=> {
             filterByPrice();
             priceInputValue.innerHTML = priceInput.value;
-          });
-    
+            });
+
+        searchInput.addEventListener("input", ()=>{
+            filterByWord(searchInput.value);
+        });
     
     /* console.log(data); */
     
