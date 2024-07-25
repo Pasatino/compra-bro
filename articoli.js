@@ -37,7 +37,7 @@ fetch('./annunci.json')
                 let card = document.createElement('article');
                 card.classList.add('col-3')
                 card.innerHTML =`
-                <article class='flex-column p-3      article-body bg-primary textFont1'>
+                <article class='flex-column p-3       article-body bg-primary textFont1'>
                 <h3 class="articleName">${truncateWord(articles.name)}</h3>
                 <p class="articleCategory">${articles.category}</p>
                 <p class="articlePrice">${articles.price} $</p> </article>`
@@ -72,12 +72,17 @@ fetch('./annunci.json')
         }
         
         
-        function filterByCategory(category) {
+        function filterByCategory(array) {
+            let selectedButton = Array.from(radioButtons).find((button)=> button.checked);
+            category = selectedButton.id;
+            console.log(category);
+
+
             if (category !="All") {
-                let filtered = data.filter((article)=> article.category == category);
-                showCards(filtered);
+                let filtered = array.filter((article)=> article.category == category);
+                return filtered;
             } else {
-                showCards(data);
+                return array;
             }
             
         }
@@ -97,16 +102,23 @@ fetch('./annunci.json')
         }
         
 
-        function filterByPrice(){
-            let filtered = data.filter((article) => +article.price <= priceInput.value);
+        function filterByPrice(array){
+            let filtered = array.filter((article) => +article.price <= priceInput.value);
             
-            showCards(filtered);
+            return filtered;
         }
         
-        function filterByWord(word){
-            let filtered = data.filter((annuncio)=> annuncio.name.toLowerCase().includes(word.toLowerCase()))
+        function filterByWord(array){
+            let filtered = array.filter((annuncio)=> annuncio.name.toLowerCase().includes(searchInput.value.toLowerCase()))
             /* console.log(filtered); */
-            showCards(filtered);
+            return filtered;
+        }
+        
+        function globalFilter(){
+            let filteredByCategory = filterByCategory(data);
+            let filteredByCategoryAndPrice = filterByPrice(filteredByCategory);
+            let filteredByCategoryAndPriceAndWord = filterByWord(filteredByCategoryAndPrice);
+            return  showCards(filteredByCategoryAndPriceAndWord);
         }
         
         showCards(data);
@@ -116,17 +128,19 @@ fetch('./annunci.json')
         let radioButtons = document.querySelectorAll(".form-check-input");
         radioButtons.forEach((button)=>{
             button.addEventListener("click", ()=>{
-                filterByCategory(button.id);
+                globalFilter();
             });
         });
+
+        filterByCategory();
         
         priceInput.addEventListener("input", ()=> {
-            filterByPrice();
+            globalFilter()
             priceInputValue.innerHTML = priceInput.value;
             });
 
         searchInput.addEventListener("input", ()=>{
-            filterByWord(searchInput.value);
+            globalFilter()
         });
     
     /* console.log(data); */
