@@ -15,8 +15,7 @@
 }
 
 .bg-secondary{
-    background: rgb(219,231,255);
-    background: radial-gradient(circle, rgba(219,231,255,1) 0%, rgba(238,244,255,1) 50%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(454deg, #6d73cc, #6746d3, #799cdd)
 }
 
 
@@ -38,10 +37,22 @@
 /* Articles */
 
 .article-body{
+    position: relative;
     margin: 2vh;
     height: 30vh;
     width: 23vh;
     border-radius: 10px;
+}
+
+.article-name , .article-category{
+    text-align: center;
+}
+
+
+.article-price{
+    position: absolute;
+    bottom: 0;
+    right: 20px;
 }
 
 
@@ -62,8 +73,39 @@
 }
 
 .home-article-btn {
+    text-decoration: none; /* rimuovo il sottolinea */
+    text-align: center; /* centro il testo del bottone */
+    color: black;
     width: 30vh;   
     border: none;
     border-radius: 15px;
     padding: 2vh;
+}
+
+.custom-container{
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+.slides{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start;
+}
+
+.slide-1{
+    background: linear-gradient(454deg, #4f4080, #9553ff);
+}
+
+.slide-2{
+    background: linear-gradient(454deg, #3fc568, #9553ff);
+}
+
+.slide-3{
+    background: linear-gradient(454deg, #d146a7, #9553ff);
 }

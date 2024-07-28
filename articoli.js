@@ -38,9 +38,9 @@ fetch('./annunci.json')
                 card.classList.add('col-3')
                 card.innerHTML =`
                 <article class='flex-column p-3       article-body bg-primary textFont1'>
-                <h3 class="articleName">${truncateWord(articles.name)}</h3>
-                <p class="articleCategory">${articles.category}</p>
-                <p class="articlePrice">${articles.price} $</p> </article>`
+                <h3 class="article-name">${truncateWord(articles.name)}</h3>
+                <p class="article-category">${articles.category}</p>
+                <p class="article-price">${articles.price} $</p> </article>`
                 myArticle.appendChild(card); //appendChild ci permette di inserire le card create all'interno del section con id article           
         });
         }
