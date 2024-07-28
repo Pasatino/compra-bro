@@ -17,7 +17,6 @@
 .bg-secondary{
     background: rgb(238,174,202);
     background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
-    background-repeat: no-repeat;
 }
 
 
@@ -33,6 +32,12 @@
     transition: 0.5s;
 }
 
+/* Articles page */
+
+.article-page-title {
+    font-size: 5vw;
+    margin: 0;
+}
 
 
 /* Articles */
@@ -51,22 +56,16 @@
 
 
 .article-price{
-    position: absolute;
+    position: absolute; /* Posiziono l'elemento in modo assoluto rispetto al body della card */
     bottom: 0;
     right: 20px;
 }
 
 
-
-/* Others */
+/* Homepage */
 
 .home-title {
     font-size: 7vh;
-}
-
-.article-page-title {
-    font-size: 5vw;
-    margin: 0;
 }
 
 .home-subtitle {
@@ -86,8 +85,8 @@
 .custom-container{
     width: 100%;
     height: 100vh;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
+    overflow-y: scroll; /* Abilito lo scorrimento verticale */
+    scroll-snap-type: y mandatory; /* Abilito lo snap allo scorrimento verticale */
 }
 
 .slides{
@@ -96,7 +95,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    scroll-snap-align: start;
+    scroll-snap-align: start; /* Allinea l'inizio di ogni slide con l'inizio del contenitore durante lo scorrimento */
 }
 
 .slide-1{
@@ -105,8 +104,8 @@
 
 .slide-2{
     background-image: url(/backgrounds/bg1.png);
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-size: cover; /* Imposto l'immagine di sfondo in modo tale che copra l'intera area della slide */
+    background-repeat: no-repeat; /* Impedisco la ripetizione dell'immagine di sfondo */
     gap: 100px;
 }
 
@@ -116,9 +115,7 @@
 }
 
 .background-video {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: absolute; /* Posiziono l'elemento in modo assoluto rispetto al primo antenato posizionato, ovvero il contenitore section della prima slide */
     width: 100%;
     height: 100%;
     object-fit: cover; /* Assicura che il video copra l'intera area senza distorsioni */
@@ -129,3 +126,7 @@
     width: 500px;
     height: 500px;
 }
+
+
+
+
