@@ -10,14 +10,15 @@
 /* colors */
 
 .bg-primary{
-    background: rgb(238,174,202);
-    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(70,101,252,1) 93%);   
 }
 
 .bg-secondary{
-    background: linear-gradient(454deg, #6d73cc, #6746d3, #799cdd)
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    background-repeat: no-repeat;
 }
-
 
 
 /* navbar */
@@ -103,13 +104,14 @@
 }
 
 .slide-2{
-    
-    background: linear-gradient(454deg, #d146a7, #9553ff);
+    background-image: url(/backgrounds/bg1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
     gap: 100px;
 }
 
 .slide-3{
-    background: linear-gradient(454deg, #3fc568, #9553ff);
+    background: linear-gradient(454deg, #d146a7, #9553ff);
     gap: 100px;
 }
 
