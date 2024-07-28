@@ -99,13 +99,31 @@
 }
 
 .slide-1{
-    background: linear-gradient(454deg, #4f4080, #9553ff);
+    color: antiquewhite;
 }
 
 .slide-2{
-    background: linear-gradient(454deg, #3fc568, #9553ff);
+    
+    background: linear-gradient(454deg, #d146a7, #9553ff);
+    gap: 100px;
 }
 
 .slide-3{
-    background: linear-gradient(454deg, #d146a7, #9553ff);
+    background: linear-gradient(454deg, #3fc568, #9553ff);
+    gap: 100px;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Assicura che il video copra l'intera area senza distorsioni */
+    z-index: -1; /* Posiziona il video dietro al contenuto */
+}
+
+.img-slide{
+    width: 500px;
+    height: 500px;
 }
