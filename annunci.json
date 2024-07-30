@@ -19,9 +19,9 @@
     },
     {
         "id": 4,
-        "name": "Bilocale",
+        "name": "Sedia",
         "category": "Immobili",
-        "price": "30000.54"
+        "price": "10.54"
     },
     {
         "id": 5,
@@ -31,9 +31,9 @@
     },
     {
         "id": 6,
-        "name": "Divani due posti",
+        "name": "Poltrona",
         "category": "Arredamento",
-        "price":"400.64"
+        "price":"50.64"
     },
     {
         "id": 7,
@@ -57,7 +57,7 @@
         "id": 10,
         "name": "Ford Puma",
         "category": "Motori",
-        "price": "25000.02"
+        "price": "200.02"
     },
     {
         "id": 11,
@@ -69,7 +69,7 @@
         "id": 12,
         "name": "Trilocale",
         "category": "Immobili",
-        "price": "55000.34"
+        "price": "5.34"
     },
     {
         "id": 13,
@@ -105,7 +105,7 @@
         "id": 18,
         "name": "Ducati Monster",
         "category": "Motori",
-        "price": "12000.13"
+        "price": "120.13"
     },
     {
         "id": 19,
@@ -124,7 +124,7 @@
         "id": 22,
         "name": "Scrivania in vetro",
         "category": "Arredamento",
-        "price": "600.63"
+        "price": "60.63"
     },
     {
         "id": 23,
@@ -148,19 +148,19 @@
         "id": 26,
         "name": "Fiat 300",
         "category": "Motori",
-        "price": "2560.42"
+        "price": "260.42"
     },
     {
         "id": 27,
         "name": "Set mazze da golf",
         "category": "Sport",
-        "price": "4320.43"
+        "price": "420.43"
     },
     {
         "id": 28,
         "name": "Posto augo",
         "category": "Immobili",
-        "price": "2200.63"
+        "price": "200.63"
     },
     {
         "id": 29,
@@ -190,13 +190,13 @@
         "id": 33,
         "name": "IPhone X",
         "category": "Elettronica",
-        "price": "1300.41"
+        "price": "130.41"
     },
     {
         "id": 34,
         "name": "Nissan Juke",
         "category": "Motori",
-        "price": "25420.40"
+        "price": "220.40"
     },
     {
         "id": 35,
@@ -215,7 +215,7 @@
         "id": 38,
         "name": "Poltrona",
         "category": "Arredamento",
-        "price": "420.66"
+        "price": "42.66"
     },
     {
         "id": 39,
@@ -233,25 +233,25 @@
         "id": 41,
         "name": "Macbook Pro",
         "category": "Elettronica",
-        "price": "2340.37"
+        "price": "20.37"
     },
     {
         "id": 42,
         "name": "Dacia Duster",
         "category": "Motori",
-        "price": "13350.73"
+        "price": "150.73"
     },
     {
         "id": 43,
         "name": "Canoa",
         "category": "Sport",
-        "price": "520.03"
+        "price": "50.03"
     },
     {
         "id": 44,
         "name": "Cantina",
         "category": "Immobili",
-        "price": "20000.12"
+        "price": "200.12"
     },
     {
         "id": 45,
@@ -263,13 +263,13 @@
         "id": 46,
         "name": "Lampadario",
         "category": "Arredamento",
-        "price": "280.54"
+        "price": "20.54"
     },
     {
         "id": 47,
         "name": "Trattore",
         "category": "Giardinaggio",
-        "price": "12000.09"
+        "price": "120.09"
     },
     {
         "id": 48,
